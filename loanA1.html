@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Loan Application</title>
+<link rel="stylesheet" href="loanA1.css">
+</head>
+<body style="background-color:Black">
+<div class="container">
+    <div id="otpPage">
+        <h2><center><font size="6" face="verdana" color="Red">OTP Verification</font></center></h2>
+        <form id="otpForm">
+            <input type="email" id="email" font-color:red placeholder="Email Address" required>
+            <button type="button" onclick="sendOTP()">Get OTP</button>
+            <input type="text" id="otp" placeholder="Enter OTP" required>
+            <button type="button" onclick="verifyOTP()">Verify OTP</button>
+        </form>
+    </div>
+    
+    <div id="addressPage" style="display: none;">
+        <h2><center><font size="6" face="verdana" color="Red">Shipping Details</font></center></h2>
+        <form id="addressForm">
+            <input type="text" id="fullName" placeholder="Full Name" required>
+            <input type="text" id="address" placeholder="Address line 1" required>
+            <input type="text" id="address" placeholder="Address line 2(optional)" required>
+            <input type="text" id="city" placeholder="City" required>
+            <input type="text" id="state" placeholder="State/Province" required>
+            <input type="number" id="zip/postal code" placeholder="Zip/Postal Code" required>
+            <input type="text" id="country" placeholder="Country" required>
+            <button type="button" onclick="prevPage()">Previous</button>
+            <button type="button" onclick="nextPage()">Next</button>
+        </form>
+    </div>
+    
+    <div id="loanTenurePage" style="display: none;">
+        <h2><center><font size="6" face="verdana" color="Red">Loan Tenure</font></center></h2>
+        <form id="loanTenureForm">
+            <label for="tenure"><font size="2" face="verdana" color="white">Select Loan Tenure:</label>
+            <select id="tenure">
+                <option value="12">12 months</option>
+                <option value="24">24 months</option>
+                <option value="36">36 months</option>
+                <!-- Add more options as needed -->
+            </select><font size="2" face="verdana" color="white">
+            <p id="interestRate"></p>
+            <p id="emi"></p></font>
+            <button type="button" onclick="calculateEMI()">Calculate EMI</button>
+            <button type="submit">Submit Application</button>
+            <button type="button" onclick="prevPage()">Previous</button>
+        </form>
+    </div>
+</div>
+
+<script src="loanA2.js"></script>
+</body>
+</html>
